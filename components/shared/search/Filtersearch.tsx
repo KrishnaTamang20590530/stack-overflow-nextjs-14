@@ -4,7 +4,6 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -32,15 +31,17 @@ const Filtersearch = ({
           <SelectValue placeholder="Select to filter" />
         </SelectTrigger>
         <SelectContent className="text-dark500_light700 small-regular border-none bg-light-900 dark:bg-dark-300">
-          {filters.map((filter) => (
-            <SelectItem
-              value={filter.value}
-              key={filter.value}
-              className="cursor-pointer focus:bg-light-800 dark:focus:bg-dark-400"
-            >
-              {filter.name}
-            </SelectItem>
-          ))}
+          <SelectGroup>
+            {filters.map((filter) => (
+              <SelectItem
+                value={filter.value}
+                key={filter.value}
+                className="cursor-pointer focus:bg-light-800 dark:focus:bg-dark-400"
+              >
+                {filter.name}
+              </SelectItem>
+            ))}
+          </SelectGroup>
         </SelectContent>
       </Select>
     </div>

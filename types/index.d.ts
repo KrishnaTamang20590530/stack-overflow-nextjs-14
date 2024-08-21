@@ -54,5 +54,5 @@ export interface QuestionCategory {
 
 export interface TagsType {
   name: string;
-  count: number;
+  count?: number;
 }
